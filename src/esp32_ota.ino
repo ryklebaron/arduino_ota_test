@@ -4,12 +4,12 @@
 #include <WiFiClientSecure.h>
 #include "cert.h"
 
-const char * ssid = "test";
-const char * password = "Welkom01!";
+const char * ssid = "pi";
+const char * password = "petymEwwzHzQ1!2@";
 
 
 String FirmwareVer = {
-  "2.6"
+  "2.7"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/firmware.bin"
@@ -35,6 +35,8 @@ void repeatedCall() {
       firmwareUpdate();
     }
   }
+
+  Serial.println("WOW It is working!!1");
   if ((currentMillis - previousMillis_2) >= mini_interval) {
     previousMillis_2 = currentMillis;
     Serial.print("idle loop...");
