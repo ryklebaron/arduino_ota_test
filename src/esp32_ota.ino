@@ -9,10 +9,10 @@ const char * password = "Welkom01!";
 
 
 String FirmwareVer = {
-  "2.4"
+  "2.6"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
-#define URL_fw_Bin "https://raw.githubusercontent.com/bertbaron/arduino_ota_test/main/firmware.bin"
+#define URL_fw_Bin "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/firmware.bin"
 
 //#define URL_fw_Version "http://cade-make.000webhostapp.com/version.txt"
 //#define URL_fw_Bin "http://cade-make.000webhostapp.com/firmware.bin"
@@ -34,7 +34,6 @@ void repeatedCall() {
     if (FirmwareVersionCheck()) {
       firmwareUpdate();
     }
-    Serial.println("nieuwe versie 2.5 geupdate");
   }
   if ((currentMillis - previousMillis_2) >= mini_interval) {
     previousMillis_2 = currentMillis;
