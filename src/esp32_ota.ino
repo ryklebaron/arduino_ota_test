@@ -1,6 +1,6 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
-#include <HTTPUpdate.h>
+#include <ESP32httpUpdate.h>
 #include <WiFiClientSecure.h>
 #include "cert.h"
 
@@ -34,6 +34,7 @@ void repeatedCall() {
     if (FirmwareVersionCheck()) {
       firmwareUpdate();
     }
+    Serial.println("nieuwe versie 2.5 geupdate");
   }
   if ((currentMillis - previousMillis_2) >= mini_interval) {
     previousMillis_2 = currentMillis;
@@ -85,13 +86,12 @@ void setup() {
   connect_wifi();
 }
 void loop() {
-  if (button_boot.pressed) { //to connect wifi via Android esp touch app 
-    Serial.println("Firmware update Starting..");
-    firmwareUpdate();
-    button_boot.pressed = false;
-    Serial.println("version 2.4 gelukt");
-  }
+  // if (button_boot.pressed) { //to connect wifi via Android esp touch app 
+  //   Serial.println("Firmware update Starting..");
+  //   firmwareUpdate();
+  // }
   repeatedCall();
+  
 }
 
 void connect_wifi() {
@@ -113,11 +113,12 @@ void firmwareUpdate(void) {
   WiFiClientSecure client;
   client.setCACert(rootCACertificate);
 //  httpUpdate.setLedPin(LED_BUILTIN, LOW);
-  t_httpUpdate_return ret = httpUpdate.update(client, URL_fw_Bin);
+  ESP32HTTPUpdate http32Update;
+  t_httpUpdate_return ret = http32Update.update(URL_fw_Bin, FirmwareVer);
 
   switch (ret) {
   case HTTP_UPDATE_FAILED:
-    Serial.printf("HTTP_UPDATE_FAILD Error (%d): %s\n", httpUpdate.getLastError(), httpUpdate.getLastErrorString().c_str());
+    Serial.printf("HTTP_UPDATE_FAILD Error (%d): %s\n", http32Update.getLastError(), http32Update.getLastErrorString().c_str());
     break;
 
   case HTTP_UPDATE_NO_UPDATES:
