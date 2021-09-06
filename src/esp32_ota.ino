@@ -9,7 +9,7 @@ const char * password = "petymEwwzHzQ1!2@";
 
 
 String FirmwareVer = {
-  "3.4"
+  "3.5"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/firmware.bin"
@@ -24,7 +24,7 @@ int FirmwareVersionCheck();
 unsigned long previousMillis = 0; // will store last time LED was updated
 unsigned long previousMillis_2 = 0;
 const long interval = 60000;
-const long mini_interval = 1000;
+const long mini_interval = 3000;
 void repeatedCall() {
   static int num=0;
   unsigned long currentMillis = millis();
