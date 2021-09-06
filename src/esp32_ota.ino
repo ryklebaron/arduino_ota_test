@@ -9,7 +9,7 @@ const char * password = "petymEwwzHzQ1!2@";
 
 
 String FirmwareVer = {
-  "2.8"
+  "2.9"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/firmware.bin"
