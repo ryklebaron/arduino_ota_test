@@ -9,7 +9,7 @@ const char * password = "Welkom01!";
 
 
 String FirmwareVer = {
-  "2.3"
+  "2.4"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/bertbaron/arduino_ota_test/main/firmware.bin"
@@ -89,6 +89,7 @@ void loop() {
     Serial.println("Firmware update Starting..");
     firmwareUpdate();
     button_boot.pressed = false;
+    Serial.println("version 2.4 gelukt");
   }
   repeatedCall();
 }
