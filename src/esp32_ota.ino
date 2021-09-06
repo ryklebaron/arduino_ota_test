@@ -9,7 +9,7 @@ const char * password = "petymEwwzHzQ1!2@";
 
 
 String FirmwareVer = {
-  "3.2"
+  "3.3"
 };
 #define URL_fw_Version "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/ryklebaron/arduino_ota_test/main/firmware.bin"
@@ -30,7 +30,7 @@ void repeatedCall() {
   unsigned long currentMillis = millis();
   if ((currentMillis - previousMillis) >= interval) {
     // save the last time you blinked the LED
-    Serial.println("WOW It is working!!1");
+    Serial.println("machtig dit");
     previousMillis = currentMillis;
     if (FirmwareVersionCheck()) {
       firmwareUpdate();
