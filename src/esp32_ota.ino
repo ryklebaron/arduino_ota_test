@@ -3,6 +3,7 @@
 #include <ESP32httpUpdate.h>
 #include <WiFiClientSecure.h>
 #include "cert.h"
+#include <HX711_ADC.h>
 
 const char * ssid = "pi";
 const char * password = "petymEwwzHzQ1!2@";

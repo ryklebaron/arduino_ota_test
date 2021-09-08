@@ -1,0 +1,33 @@
+Rykle Baron, [08.09.21 12:07]
+voor mensen met een beperking, die geen digitale klok kunnen aflezen
+
+Bert Baron, [08.09.21 12:07]
+Ah, dat, leuk!
+
+Rykle Baron, [08.09.21 12:08]
+slecht ontwerp, maar het idee is volgens mij top
+
+Bert Baron, [08.09.21 12:08]
+heb je dat element uit een bestaande weegschaal gehaald? Of kun je dat gewoon kopen?
+
+Rykle Baron, [08.09.21 13:00]
+ok
+
+Bert Baron, [08.09.21 14:03]
+language: python
+python:
+    - "3.9"
+
+# Cache PlatformIO packages using Travis CI container-based infrastructure
+sudo: false
+cache:
+    directories:
+        - "~/.platformio"
+        - $HOME/.cache/pip
+
+install:
+    - pip install -U platformio
+    - pio update
+
+script:
+    - pio run
