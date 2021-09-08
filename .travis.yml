@@ -24,5 +24,5 @@ deploy:
     - .pio/build/d1_mini_pro/firmware.bin
   skip_cleanup: true
   on:
-    repo: ryklebaron/arduino_ota_update
+    repo: ryklebaron/arduino_ota_test
     tags: true
