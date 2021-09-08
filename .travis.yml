@@ -15,3 +15,14 @@ install:
 
 script:
     - pio run
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "tLgZqq3fCZdDSV2+6cqUX/F4xil7/9q+6Yc/kL5tPqegXZUdoZ1xYhHi9xod6EfqUVMBElAG0xiKMiykuS+scKZt4JyHWL8uHjs0o9xTLl+szEbuaO1mJ6CXj3dV3KRYUZYbjI5wSr7NsUYmWf48Qm58SSU7hcDsXIAkpS+ucN4cQHRhuK0zSseJ2ZEW5L5sPOjAXFOS7ps2mERRfomU8Icl0rD+twaPgWJw5cXp2VXLwWWBFJmtSC1Fcg8NJ76YHfWdsj/aHfvWG/SY5nGyMRHkvZqkXoifJnmd3SHPJNxdAYP+ksRnq5how29/xSLhpf3Br4GiOY2DaPd8mk5QJRPqsO86cCXuWu7ipA/0UotU9jJpK11K2E3Y1p/UN7nr3Kb6mKOm2DI3N+GFyfWrWqwKzbDvzYMUk4bilkWPM9p36FHOIUXvKlH6kCyCtBBnMSCjV5jxOMwYa3PsP0ThY6I9R7Y1kyQ1MImCcr1If18SxG7Cwyhd1up2al4fbzaKjk8k34tDcxryThLoDyQ2l7dqZXZmuZ/pMH4Fl8LjpFh/kJi6QLA6y4zIgbTNHSCtEY0EO/O+UMbvuhjkbJGpEj3Pbqp7gjT/B1ZfBtIrQoUHIcPKl62VTU0jsW79cpiD7uuFU+OZLiUP3zsLXF2tOjoS3H7EX62AdNCAC0Qkij8="
+  file:
+    - .pio/build/d1_mini_pro/firmware.bin
+  skip_cleanup: true
+  on:
+    repo: ryklebaron/arduino_ota_update
+    tags: true
